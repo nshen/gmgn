@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ThemeChanger } from '@/components/ui/theme-changer';
 import { useLanguage } from '@/lib/language-provider';
-import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 import Link from 'next/link';
 import { Search, Menu } from 'lucide-react'
 import { BottomToolbar } from "@/components/ui/bottom-toolbar";
@@ -12,6 +12,7 @@ import { SettingsDropdown } from "@/components/ui/settings-dropdown";
 import { TimeFilter } from "@/components/ui/time-filter";
 import { useState } from "react";
 import { TokenTable } from "@/components/ui/token-table";
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import { NetworkBadge } from "@/components/network-badge"
 // import { SettingsDropdown } from "@/components/settings-dropdown"
 // import { BottomToolbar } from "@/components/bottom-toolbar"
@@ -114,7 +115,8 @@ export default function Home() {
               </div>
             </div>
             <SettingsDropdown />
-            <Button variant="outline" className="hidden md:inline-flex ml-2">{t('connect')}</Button>
+
+                <ConnectButton accountStatus="full" chainStatus="full" showBalance={false} />
             <Button variant="outline" size="icon" className="md:hidden w-8 h-8">
               <Image
                 src="/placeholder.svg"
